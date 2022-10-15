@@ -1,8 +1,8 @@
-package models;
+package model;
 
 public class Categoria {
 
-	String nombre;
+	private String nombre;	//recuperar
 
 	public String getNombre() {
 		return nombre;

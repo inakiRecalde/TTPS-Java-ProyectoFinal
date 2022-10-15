@@ -1,11 +1,14 @@
-package models;
+package model;
 
 public class Url {
 
-
-	String nombre;
+	private String nombre;
+	private String url;
 	
-	String url;
+	public Url(String nombre, String url) {
+		this.nombre = nombre;
+		this.url = url;	//recuperar
+	}
 	
 	public String getNombre() {
 		return nombre;
