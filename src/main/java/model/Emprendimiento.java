@@ -4,31 +4,49 @@ package model;
 import java.awt.Image;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="EMPRENDIMIENTO")
 public class Emprendimiento {
 
-	@Id @GeneratedValue
-	@Column(name="EMPRENDIMIENTO_ID")
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@Column(name="DOMINIO")
 	private String dominio; //recuperar
+	
+	@Column(name="PASSWORD")
 	private String password;
+	
+	@Column(name="NOMBRE")
 	private String nombre;
+	
+	@Column(name="DESCRIPCION")
 	private String descripcion;
+	
+	@Column(name="BANNER")
 	private Image banner;
+	
+	@Column(name="MOSTRAR_TOP")
 	private boolean mostrarTop;
+	
+	@Column(name="PRECIO_POR_MANGUITO")
 	private double precioPorManguito;
+
+	@Column(name="MANGUITOS_RECIBIDOS")
 	private double manguitosRecibidos;
+	
+	@Column(name="REDES_SOCIALES")
 	private List<Url> redesSociales;
+	
+	@Column(name="POSTEOS")
 	private List<Posteo> posteos;
+	
+	@Column(name="CATEGORIAS")
 	private List<Categoria> categorias;
+
+	@Column(name="PLANES")
 	private List<Plan> planes;
 	
 	public Emprendimiento(String dominio, String pass) {
@@ -130,6 +148,14 @@ public class Emprendimiento {
 
 	public void setPlanes(List<Plan> planes) {
 		this.planes = planes;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

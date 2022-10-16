@@ -4,21 +4,20 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
 @Table(name="POSTEO")
 public class Posteo {
 
-	@Id @GeneratedValue
-	@Column(name="POSTEO_ID")
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@Column(name="TEXTO")
 	private String texto;
+	
+	@Column(name="IMAGENES")
 	private List<Image> imagenes;
 	
 	public Posteo(String texto){
@@ -40,5 +39,13 @@ public class Posteo {
 
 	public void setImagenes(List<Image> imagenes) {
 		this.imagenes = imagenes;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

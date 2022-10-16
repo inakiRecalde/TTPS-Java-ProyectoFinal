@@ -1,5 +1,7 @@
 package clasesDAOimpl;
 
+import javax.persistence.Query;
+
 import clasesDAO.EmprendimientoDAO;
 import model.Emprendimiento;
 
@@ -11,9 +13,12 @@ public class EmprendimientoDAOHibernateJPA extends GenericDAOHibernateJPA<Empren
 	}
 
 	@Override
-	public Emprendimiento recuperarDonacion(String dominio) {
-		// TODO Auto-generated method stub
-		return null;
+	public Emprendimiento recuperarEmprendimiento(String dominio) {
+		Query consulta = EMF.getEMF().createEntityManager().
+				createQuery("select e from Emprendimiento e where e.dominio =?");
+		consulta.setParameter(1, dominio);
+		Emprendimiento resultado = (Emprendimiento)consulta.getSingleResult();
+		return resultado;
 	}
 
 }

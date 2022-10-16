@@ -3,22 +3,22 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="PLAN")
 public class Plan {
 
-	@Id @GeneratedValue
-	@Column(name="POSTEO_ID")
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@Column(name="CANT_MANGUITOS")
 	private double cantManguitos;
+	
+	@Column(name="BENEFICIO")
 	private String beneficio;
+	
+	@Column(name="DONACIONES")
 	private List<Donacion> donaciones;
 	
 	public Plan(double manguitos, String beneficio) {
@@ -49,5 +49,13 @@ public class Plan {
 
 	public void setDonaciones(List<Donacion> donaciones) {
 		this.donaciones = donaciones;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

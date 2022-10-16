@@ -1,5 +1,7 @@
 package clasesDAOimpl;
 
+import javax.persistence.Query;
+
 import clasesDAO.DonacionDAO;
 import model.Donacion;
 
@@ -12,8 +14,11 @@ public class DonacionDAOHibernateJPA extends GenericDAOHibernateJPA<Donacion> im
 
 	@Override
 	public Donacion recuperarDonacion(String contacto) {
-		// TODO Auto-generated method stub
-		return null;
+		Query consulta = EMF.getEMF().createEntityManager().
+				createQuery("select d from Donacion d where d.contacto =?");
+		consulta.setParameter(1, contacto);
+		Donacion resultado = (Donacion)consulta.getSingleResult();
+		return resultado;
 	}
 
 }

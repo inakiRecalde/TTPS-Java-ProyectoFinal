@@ -5,15 +5,25 @@ import javax.persistence.*;
 @Table(name="DONACION")
 public class Donacion {
 	
-	@Id @GeneratedValue
-	@Column(name="DONACION_ID")
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 
+	@Column(name="CANT_MANGUITOS")
 	private double cantManguitos;
+	
+	@Column(name="MONTO_DONADO")
 	private double montoDonado;
+	
+	@Column(name="NOMBRE_DONANTE")
 	private String nombreDonante;
+	
+	@Column(name="CONTACTO")
 	private String contacto;	//recuperar
+	
+	@Column(name="MENSAJE")
 	private String mensaje;
+	
+	@Column(name="EMPRENDIMIENTO")
 	private Emprendimiento emprendimiento;
 	
 	public Donacion(double manguitos, double monto, String contacto, String nombre, String mensaje, Emprendimiento emprendimiento) {
@@ -64,6 +74,13 @@ public class Donacion {
 		this.montoDonado = montoDonado;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	
 }
