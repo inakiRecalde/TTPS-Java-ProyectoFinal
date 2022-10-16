@@ -4,8 +4,20 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="POSTEO")
 public class Posteo {
 
+	@Id @GeneratedValue
+	@Column(name="POSTEO_ID")
+	private Long id;
+	
 	private String texto;
 	private List<Image> imagenes;
 	

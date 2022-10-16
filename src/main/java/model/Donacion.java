@@ -1,6 +1,14 @@
 package model;
+import javax.persistence.*;
 
+@Entity
+@Table(name="DONACION")
 public class Donacion {
+	
+	@Id @GeneratedValue
+	@Column(name="DONACION_ID")
+	private Long id;
+
 	private double cantManguitos;
 	private double montoDonado;
 	private String nombreDonante;

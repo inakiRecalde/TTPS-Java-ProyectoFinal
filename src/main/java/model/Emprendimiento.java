@@ -1,10 +1,23 @@
 package model;
 
+
 import java.awt.Image;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="EMPRENDIMIENTO")
 public class Emprendimiento {
 
+	@Id @GeneratedValue
+	@Column(name="EMPRENDIMIENTO_ID")
+	private Long id;
+	
 	private String dominio; //recuperar
 	private String password;
 	private String nombre;
