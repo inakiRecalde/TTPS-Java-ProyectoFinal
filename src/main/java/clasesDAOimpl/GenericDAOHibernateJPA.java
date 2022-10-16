@@ -1,6 +1,4 @@
-package clasesDAO;
-
-import clasesDAOimpl.EMF;
+package clasesDAOimpl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,6 +6,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+
+import clasesDAO.GenericDAO;
 
 public class GenericDAOHibernateJPA<T> implements GenericDAO<T> {
 
