@@ -23,7 +23,7 @@ public class Donacion {
 	@Column(name="MENSAJE")
 	private String mensaje;
 	
-	@Column(name="EMPRENDIMIENTO")
+	@OneToOne(optional = false)
 	private Emprendimiento emprendimiento;
 	
 	public Donacion(double manguitos, double monto, String contacto, String nombre, String mensaje, Emprendimiento emprendimiento) {

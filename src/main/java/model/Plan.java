@@ -18,7 +18,7 @@ public class Plan {
 	@Column(name="BENEFICIO")
 	private String beneficio;
 	
-	@Column(name="DONACIONES")
+	@OneToMany()
 	private List<Donacion> donaciones;
 	
 	public Plan(double manguitos, String beneficio) {

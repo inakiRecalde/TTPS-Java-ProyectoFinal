@@ -15,7 +15,7 @@ public class Usuario {
 	@ManyToOne
 	@JoinColumn(name="rol_id")
 	private Rol rol;
-	@OneToOne(optional = true, mappedBy="emprendedor")
+	@OneToOne(optional = true)
 	private Emprendimiento emprendimiento;
 	
 	public Usuario(String username, String password, Rol rol){

@@ -25,8 +25,9 @@ public class Emprendimiento {
 	@Column(name="DESCRIPCION")
 	private String descripcion;
 	
+	/*  
 	@Column(name="BANNER")
-	private Image banner;
+	private Image banner; */
 	
 	@Column(name="MOSTRAR_TOP")
 	private boolean mostrarTop;
@@ -37,17 +38,17 @@ public class Emprendimiento {
 	@Column(name="MANGUITOS_RECIBIDOS")
 	private double manguitosRecibidos;
 	
-	@Column(name="REDES_SOCIALES")
+	@OneToMany()
 	private List<Url> redesSociales;
 	
-	@Column(name="POSTEOS")
+	@OneToMany()
 	private List<Posteo> posteos;
 	
-	@Column(name="CATEGORIAS")
+	@ManyToMany()
 	private List<Categoria> categorias;
-
-	@Column(name="PLANES")
-	private List<Plan> planes;
+	
+	@ManyToMany()
+	private List<Plan> planes; 
 	
 	public Emprendimiento(String dominio, String pass) {
 		this.dominio = dominio;

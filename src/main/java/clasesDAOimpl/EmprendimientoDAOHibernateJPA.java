@@ -14,7 +14,7 @@ public class EmprendimientoDAOHibernateJPA extends GenericDAOHibernateJPA<Empren
 
 	@Override
 	public Emprendimiento recuperarEmprendimiento(String dominio) {
-		Query consulta = EMF.getEMF().createEntityManager().
+		Query consulta = EMF.getEm().createEntityManager().
 				createQuery("select e from Emprendimiento e where e.dominio =?");
 		consulta.setParameter(1, dominio);
 		Emprendimiento resultado = (Emprendimiento)consulta.getSingleResult();

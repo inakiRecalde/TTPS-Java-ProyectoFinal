@@ -12,7 +12,7 @@ public class UrlDAOHibernateJPA extends GenericDAOHibernateJPA<Url> implements U
 	
 	@Override
 	public Url recuperarUrl(String url) {
-		Query consulta = EMF.getEMF().createEntityManager().
+		Query consulta = EMF.getEm().createEntityManager().
 				createQuery("select u from Url u where u.url =?");
 		consulta.setParameter(1, url);
 		Url resultado = (Url)consulta.getSingleResult();

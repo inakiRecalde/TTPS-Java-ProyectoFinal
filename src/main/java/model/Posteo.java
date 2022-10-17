@@ -17,13 +17,13 @@ public class Posteo {
 	@Column(name="TEXTO")
 	private String texto;
 	
-	@Column(name="IMAGENES")
-	private List<Image> imagenes;
+	/* @Column(name="IMAGENES")
+	private List<Image> imagenes; 
 	
 	public Posteo(String texto){
 		this.texto = texto;
 		this.imagenes = new ArrayList<Image>();
-	}
+	} */
 	
 	public String getTexto() {
 		return texto;
