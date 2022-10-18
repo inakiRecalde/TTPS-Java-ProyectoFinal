@@ -12,7 +12,7 @@ public class CategoriaDAOHibernateJPA extends GenericDAOHibernateJPA<Categoria> 
 	@Override
 	public Categoria recuperarCategoria(String nombre) {
 		Query consulta = EMF.getEm().createEntityManager().
-				createQuery("select c from Categoria c where c.nombre =?");
+				createQuery("select c from Categoria c where c.nombre = ?1");
 		consulta.setParameter(1, nombre);
 		Categoria resultado = (Categoria)consulta.getSingleResult();
 		return resultado;

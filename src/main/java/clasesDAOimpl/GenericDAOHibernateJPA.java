@@ -28,7 +28,7 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T> {
 
 	@Override
 	public T persistir(T entity) {
-	 EntityManager em = EMF.getEMF().createEntityManager();
+	 EntityManager em = EMF.getEm().createEntityManager();
 	 EntityTransaction tx = null;
 	 try {
 	 tx = em.getTransaction();
@@ -46,7 +46,7 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T> {
 	 return entity;
 	}
 	public T actualizar(T entity) {
-	 EntityManager em= EMF.getEMF().createEntityManager();
+	 EntityManager em= EMF.getEm().createEntityManager();
 	 EntityTransaction etx= em.getTransaction();
 	 etx.begin();
 	 entity = em.merge(entity);
@@ -57,7 +57,7 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T> {
 	
 	@Override
 	public void borrar(T entity) {
-	 EntityManager em = EMF.getEMF().createEntityManager();
+	 EntityManager em = EMF.getEm().createEntityManager();
 	 EntityTransaction tx = null;
 	 try {
 	 tx = em.getTransaction();
@@ -74,7 +74,7 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T> {
 	}
 	
 	public T borrar(Long id) {
-	 EntityManager em = EMF.getEMF().createEntityManager();
+	 EntityManager em = EMF.getEm().createEntityManager();
 	 T entity=em.find(this.getPersistentClass(), id);
 	 if (entity != null) {
 	 em.remove(entity);
@@ -84,13 +84,13 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T> {
 	}
 	
 	public List<T> recuperarTodos(String columnOrder) {
-	 Query consulta= EMF.getEMF().createEntityManager().createQuery("select e from "+ getPersistentClass().getSimpleName()+" e order by e."+columnOrder);
+	 Query consulta= EMF.getEm().createEntityManager().createQuery("select e from "+ getPersistentClass().getSimpleName()+" e order by e."+columnOrder);
 	 List<T> resultado = (List<T>)consulta.getResultList();
 	 return resultado;
 	}
 	
 	public T recuperar(Serializable id){
-		EntityManager em = EMF.getEMF().createEntityManager();
+		EntityManager em = EMF.getEm().createEntityManager();
 		T entity=em.find(this.getPersistentClass(), id);
 		em.close();
 		return entity;
