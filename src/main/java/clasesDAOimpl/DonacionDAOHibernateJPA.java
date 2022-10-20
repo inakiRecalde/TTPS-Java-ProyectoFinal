@@ -7,6 +7,9 @@ import model.Donacion;
 
 public class DonacionDAOHibernateJPA extends GenericDAOHibernateJPA<Donacion> implements DonacionDAO {
 
+	public DonacionDAOHibernateJPA() {
+		super(Donacion.class);
+	}
 	public DonacionDAOHibernateJPA(Class<Donacion> clase) {
 		super(clase);
 		// TODO Auto-generated constructor stub
