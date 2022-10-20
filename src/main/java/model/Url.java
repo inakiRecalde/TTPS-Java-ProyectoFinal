@@ -13,6 +13,8 @@ public class Url {
 	@Column(name="URL")
 	private String url;
 	
+	public Url() {	}
+	
 	public Url(String nombre, String url) {
 		this.nombre = nombre;
 		this.url = url;	//recuperar

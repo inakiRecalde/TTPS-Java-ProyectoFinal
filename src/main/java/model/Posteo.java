@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="POSTEO")
+@Table(name="POSTEOS")
 public class Posteo {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -17,13 +17,15 @@ public class Posteo {
 	@Column(name="TEXTO")
 	private String texto;
 	
-	/* @Column(name="IMAGENES")
-	private List<Image> imagenes; 
+	//@Column(name="IMAGENES")
+	//private List<Image> imagenes; 
+	
+	public Posteo() {	}
 	
 	public Posteo(String texto){
 		this.texto = texto;
-		this.imagenes = new ArrayList<Image>();
-	} */
+	} 
+	
 	
 	public String getTexto() {
 		return texto;
@@ -32,7 +34,7 @@ public class Posteo {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-
+/*
 	public List<Image> getImagenes() {
 		return imagenes;
 	}
@@ -40,7 +42,7 @@ public class Posteo {
 	public void setImagenes(List<Image> imagenes) {
 		this.imagenes = imagenes;
 	}
-	
+*/	
 	public Long getId() {
 		return id;
 	}

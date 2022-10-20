@@ -12,7 +12,7 @@ public class UsuarioDAOHibernateJPA extends GenericDAOHibernateJPA<Usuario> impl
 	@Override
 	public Usuario recuperarUsuario(String username) {
 		Query consulta = EMF.getEm().createEntityManager().
-				createQuery("select u from Usuario u where u.username =?");
+				createQuery("select u from Usuario u where u.username =?1");
 		consulta.setParameter(1, username);
 		Usuario resultado = (Usuario)consulta.getSingleResult();
 		return resultado;

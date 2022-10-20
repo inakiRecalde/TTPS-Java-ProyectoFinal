@@ -2,14 +2,15 @@ package tests;
 
 import javax.persistence.NoResultException;
 import clasesDAOimpl.CategoriaDAOHibernateJPA;
+import clasesDAOimpl.PosteoDAOHibernateJPA;
 import model.Categoria;
 
-public class TestCategoria {
+public class TestPosteo {
 	
 	public static void main(String[] args) {
 		
-		//ALTA CATEGORIA
-		CategoriaDAOHibernateJPA cat = new CategoriaDAOHibernateJPA();
+		//ALTA Posteo
+		PosteoDAOHibernateJPA pos = new PosteoDAOHibernateJPA();
 		Categoria categoria = new Categoria("futbol");
 		cat.persistir(categoria);
 		

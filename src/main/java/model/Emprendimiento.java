@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name="EMPRENDIMIENTO")
+@Table(name="EMPRENDIMIENTOS")
 public class Emprendimiento {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -86,7 +86,7 @@ public class Emprendimiento {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
+/*
 	public Image getBanner() {
 		return banner;
 	}
@@ -94,7 +94,7 @@ public class Emprendimiento {
 	public void setBanner(Image banner) {
 		this.banner = banner;
 	}
-
+*/
 	public boolean isMostrarTop() {
 		return mostrarTop;
 	}

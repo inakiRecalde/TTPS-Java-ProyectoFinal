@@ -15,6 +15,8 @@ public class Rol {
 	@OneToMany(mappedBy="rol")
 	private List<Usuario> usuarios;
 
+	public Rol() {	}
+	
 	public Long getId() {
 		return id;
 	}
