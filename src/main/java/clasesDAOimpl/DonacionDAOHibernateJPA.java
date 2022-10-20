@@ -15,7 +15,7 @@ public class DonacionDAOHibernateJPA extends GenericDAOHibernateJPA<Donacion> im
 	@Override
 	public Donacion recuperarDonacion(String contacto) {
 		Query consulta = EMF.getEm().createEntityManager().
-				createQuery("select d from Donacion d where d.contacto =?");
+				createQuery("select d from Donacion d where d.contacto =?1");
 		consulta.setParameter(1, contacto);
 		Donacion resultado = (Donacion)consulta.getSingleResult();
 		return resultado;

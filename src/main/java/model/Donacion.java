@@ -2,7 +2,7 @@ package model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="DONACION")
+@Table(name="DONACIONES")
 public class Donacion {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)

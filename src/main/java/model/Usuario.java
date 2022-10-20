@@ -18,6 +18,14 @@ public class Usuario {
 	@OneToOne(optional = true)
 	private Emprendimiento emprendimiento;
 	
+	public Usuario() {	}
+	
+	public Usuario(String username, String password){
+		this.username = username;
+		this.password = password;
+		this.emprendimiento = null;
+	}
+	
 	public Usuario(String username, String password, Rol rol){
 		this.username = username;
 		this.password = password;
