@@ -5,8 +5,8 @@ import model.Posteo;
 
 public class PosteoDAOHibernateJPA extends GenericDAOHibernateJPA<Posteo> implements PosteoDAO{
 
-	public PosteoDAOHibernateJPA(Class<Posteo> clase) {
-		super(clase);
+	public PosteoDAOHibernateJPA() {
+		super(Posteo.class);
 		// TODO Auto-generated constructor stub
 	}
 

@@ -1,7 +1,10 @@
 package tests;
 
+import java.util.List;
+
 import javax.persistence.NoResultException;
 import clasesDAOimpl.RolDAOHibernateJPA;
+import model.Plan;
 import model.Rol;
 
 public class TestRol {
@@ -30,12 +33,11 @@ public class TestRol {
 		
 		
 		//BORRAR POR ID
-		rol.borrar(rol1); //admin
-		try {
-			Rol rolResponse3 = rol.recuperar(l);
-			System.out.println("El rol admin no fue borrado " + rolResponse3);
-		}catch(NoResultException e) {
-			System.out.println("No se encuentra el rol admin");
+		rol.borrar(rol1);
+		List<Rol> Response4 = rol.recuperarTodos("id");
+		System.out.println("los roles que existen son=");
+		for (Rol unRol : Response4) {
+			System.out.println(unRol.getRol());
 		}
 		
 		

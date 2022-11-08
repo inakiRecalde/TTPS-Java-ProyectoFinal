@@ -47,9 +47,11 @@ public class Emprendimiento {
 	@ManyToMany()
 	private List<Categoria> categorias;
 	
-	@ManyToMany()
+	@OneToMany(cascade = CascadeType.REMOVE)
 	private List<Plan> planes; 
 	
+	public Emprendimiento() {
+	}
 	public Emprendimiento(String dominio, String pass) {
 		this.dominio = dominio;
 		this.password = pass;

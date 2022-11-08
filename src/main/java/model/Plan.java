@@ -21,6 +21,12 @@ public class Plan {
 	@OneToMany()
 	private List<Donacion> donaciones;
 	
+	@ManyToOne
+	private Emprendimiento emprendimiento;
+	
+	public Plan() {
+	}
+	
 	public Plan(double manguitos, String beneficio) {
 		this.cantManguitos = manguitos;
 		this.beneficio = beneficio;

@@ -6,9 +6,9 @@ import model.Plan;
 
 public class PlanDAOHibernateJPA extends GenericDAOHibernateJPA<Plan> implements PlanDAO {
 
-	public PlanDAOHibernateJPA(Class<Plan> clase) {
-		super(clase);
-		// TODO Auto-generated constructor stub
+	public PlanDAOHibernateJPA() {
+		super(Plan.class);
+		
 	}
 	
 

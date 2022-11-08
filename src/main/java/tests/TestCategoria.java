@@ -33,7 +33,7 @@ public class TestCategoria {
 		System.out.println("la categoria tenis cambio a  " + categoriaResponse3.getNombre());
 		
 		
-		//BORRAR POR ID
+		//BORRAR POR 
 		cat.borrar(categoria); //futbol
 		try {
 			Categoria categoriaResponse4 = cat.recuperarCategoria("futbol");

@@ -10,10 +10,7 @@ public class DonacionDAOHibernateJPA extends GenericDAOHibernateJPA<Donacion> im
 	public DonacionDAOHibernateJPA() {
 		super(Donacion.class);
 	}
-	public DonacionDAOHibernateJPA(Class<Donacion> clase) {
-		super(clase);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	@Override
 	public Donacion recuperarDonacion(String contacto) {

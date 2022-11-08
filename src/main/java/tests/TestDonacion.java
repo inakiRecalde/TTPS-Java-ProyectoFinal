@@ -4,6 +4,7 @@ import javax.persistence.NoResultException;
 
 import clasesDAOimpl.CategoriaDAOHibernateJPA;
 import clasesDAOimpl.DonacionDAOHibernateJPA;
+import clasesDAOimpl.EmprendimientoDAOHibernateJPA;
 import model.Categoria;
 import model.Donacion;
 import model.Emprendimiento;
@@ -15,20 +16,24 @@ public class TestDonacion {
 
 		//ALTA CATEGORIA
 		DonacionDAOHibernateJPA donacionDTO = new DonacionDAOHibernateJPA();
-		Emprendimiento emprendimiento = new Emprendimiento("ventaremeras.com", "123");
+		EmprendimientoDAOHibernateJPA EmprendimientoDTO = new EmprendimientoDAOHibernateJPA();
+		Emprendimiento emprendimiento = new Emprendimiento("ventaremerasdonacion.com", "123");
+		EmprendimientoDTO.persistir(emprendimiento);
 		Donacion donacion = new Donacion(2,2,"iniakirecalde@gmail.com","inaki","1era donacion",emprendimiento);
 		donacionDTO.persistir(donacion);
 		
-		Donacion donacion2 = new Donacion(2,2,"fran@gmail.com","fran","2da donacion",emprendimiento);
+		Emprendimiento emprendimiento2 = new Emprendimiento("ventaremerasdonacion2.com", "1234");
+		EmprendimientoDTO.persistir(emprendimiento2);
+		Donacion donacion2 = new Donacion(2,2,"fran@gmail.com","fran","2da donacion",emprendimiento2);
 		donacionDTO.persistir(donacion2);
 		
 		//GET CATEGORIA POR NOMBRE
-		Donacion Response = donacionDTO.recuperarDonacion("iniakirecalde@hotmail.com");
+		Donacion Response = donacionDTO.recuperarDonacion("iniakirecalde@gmail.com");
 		System.out.println("el contacto de la donacion es " + Response.getContacto());
 		
 		//GET CATEGORIA POR ID
-		Long l = new Long(1);
-		Long l2 = new Long(2);
+		Long l = new Long(2);
+		Long l2 = new Long(4);
 		Donacion Response2 = donacionDTO.recuperar(l2);
 		System.out.println("la categoria de id: " + Response2.getId() + "tiene como mensaje" + Response2.getMensaje());
 		
@@ -40,10 +45,10 @@ public class TestDonacion {
 		
 		
 		//BORRAR POR ID
-		donacionDTO.borrar(donacion); //futbol
+		donacionDTO.borrar(donacion); 
 		try {
-			Donacion Response4 = donacionDTO.recuperarDonacion("iniakirecalde@hotmail.com");
-			System.out.println("la donacion del contacto iniakirecalde@hotmail.com fue borrada " + Response4);
+			Donacion Response4 = donacionDTO.recuperarDonacion("iniakirecalde@gmail.com");
+			System.out.println("la donacion del contacto iniakirecalde@gmail.com no fue borrada " + Response4);
 		}catch(NoResultException e) {
 			System.out.println("no se encuentra donacion con ese contacto");
 		}

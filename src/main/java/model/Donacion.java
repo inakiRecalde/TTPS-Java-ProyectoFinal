@@ -26,6 +26,9 @@ public class Donacion {
 	@OneToOne(optional = false)
 	private Emprendimiento emprendimiento;
 	
+	public Donacion() {
+	}
+	
 	public Donacion(double manguitos, double monto, String contacto, String nombre, String mensaje, Emprendimiento emprendimiento) {
 		this.cantManguitos = manguitos;
 		this.montoDonado = monto;
