@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Emprendimiento;
@@ -22,9 +24,14 @@ public class EmprendimientoController {
 	 @Autowired
 	 private EmprendimientoService emprendimientoService;
 	 
-	 @PostMapping
-	 public Emprendimiento create(@RequestBody Emprendimiento emprendimiento) {
-		 return emprendimientoService.create(emprendimiento);
+	 @PostMapping("/create")
+	 public Emprendimiento create(@RequestParam String dominio, @RequestParam String password) {
+		 return emprendimientoService.create(dominio, password);
+	 }
+	 
+	 @GetMapping("/listar")
+	 public List<Emprendimiento> listar() {
+		 return emprendimientoService.listar();
 	 }
 	 
 	 @GetMapping
