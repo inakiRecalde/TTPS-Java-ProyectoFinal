@@ -26,11 +26,13 @@ public class EmprendimientoController {
 	 
 	 @PostMapping("/create")
 	 public Emprendimiento create(@RequestParam String dominio, @RequestParam String password) {
+		 System.out.println("Entra al controller");
 		 return emprendimientoService.create(dominio, password);
 	 }
 	 
 	 @GetMapping("/listar")
 	 public List<Emprendimiento> listar() {
+		 System.out.println("Entra al controller");
 		 return emprendimientoService.listar();
 	 }
 	 
