@@ -2,8 +2,8 @@ package ttps.spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import model.Categoria;
-import repositories.CategoriaRepository;
+import ttps.spring.model.Categoria;
+import ttps.spring.repositories.CategoriaRepository;
 
 
 public class CategoriaService {

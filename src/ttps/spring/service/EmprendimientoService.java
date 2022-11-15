@@ -26,6 +26,7 @@ public class EmprendimientoService {
 		 return emprendimientoRepository.findAll();
 	 }
 	 
+	 
 	 public Optional<Emprendimiento> getById(long id) {
 		 // validaciones
 		 return emprendimientoRepository.findById(id);
